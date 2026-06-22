@@ -1,0 +1,482 @@
+/* ==========================================
+   1. إعدادات عامة وتنسيقات الأساسية
+   ========================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background-color: #050505 !important; 
+    color: white; 
+    margin: 0; 
+    padding: 0; 
+}
+html { scroll-behavior: smooth; }
+
+/* ==========================================
+   2. الهيدر والـ Navbar
+   ========================================== */
+/* اجعلي الـ Navbar يطفو فوق الفيديو */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent !important; /* شفاف تماماً */
+    z-index: 10;
+    padding: 15px 20px;
+    border: none !important; /* إزالة أي خط حدود */
+    box-shadow: none !important; /* إزالة أي ظل */
+}
+.logo-area h2 { 
+  font-family: 'Montserrat', sans-serif;
+    font-size: 28px; 
+    letter-spacing: 3px; 
+    color: white; 
+    text-align: center;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #050505;
+    border: none !important;
+    box-shadow: none !important;
+    isolation: isolate; /* مهم لعزل الطبقات */
+}
+
+.hero-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 0;
+}
+
+/* التدرج العلوي */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* التدرج السفلي - معمول بحذر عشان ما يعملش حز */
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px; /* نزلته تحت شوية عشان يغطي أي line */
+    height: 80px;
+    background: linear-gradient(
+        to top,
+        #050505 0%,
+        rgba(5,5,5,0.92) 18%,
+        rgba(5,5,5,0.55) 45%,
+        rgba(5,5,5,0.15) 72%,
+        rgba(5,5,5,0) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-text {
+    position: absolute;
+    top: 40%;
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+    text-align: left;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 1.8rem;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.btn-gold-floating {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    padding: 12px 40px;
+    background-color: #8b0000 !important;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+/* ================= FEATURES ================= */
+.features {
+    position: relative;
+    z-index: 2;
+
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start;
+    gap: 6px;
+
+    background-color: #050505 !important;
+    border: none !important;
+    border-top: none !important;
+    box-shadow: none !important;
+
+    /* أهم جزء في الدمج */
+    margin-top: -8px !important;   /* يطلع السكشن لفوق سنة يدخل في التدرج */
+    padding: 34px 8px 19px !important; /* padding top أكبر عشان العناصر نفسها تنزل */
+}
+.feature {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* طبقة خفيفة فوق المميزات تساعد الدمج */
+.features::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    background: linear-gradient(
+        to bottom,
+        rgba(5,5,5,0) 0%,
+        rgba(5,5,5,0.35) 45%,
+        rgba(5,5,5,0.7) 75%,
+        rgba(5,5,5,1) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.feature i {
+    font-size: 24px !important;
+    color: #8b0000 !important;
+    margin-bottom: 5px !important;
+}
+
+.feature h3 {
+    font-size: 8.5px !important;
+    color: #8b0000 !important;
+    font-weight: 700;
+    margin: 0 !important;
+    line-height: 1.15;
+    text-transform: uppercase;
+    white-space: normal;
+}
+
+.features.visible .feature:hover {
+    transform: translateY(-2px);
+}
+
+video {
+    display: block !important;
+    vertical-align: top;
+}
+
+.highlight-gold { 
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: 800; 
+}
+/* ==========================================
+   4. الأزرار (مع تأثير الترانزيشن واللمعة)
+   ========================================== */
+/* التنسيق العام للزر */
+.btn-gold {
+    display: inline-block;
+    padding: 12px 40px; /* زيادة العرض ليكون الزر مريحاً للعين */
+    background-color: #8b0000 !important; /* اللون الأحمر المميز */
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 50px; /* حواف دائرية ليعطي شكلاً عصرياً */
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+
+/* تأثير التفاعل عند الضغط أو المرور بالماوس */
+.btn-gold:hover {
+    background-color: transparent !important;
+    border: 2px solid #8b0000;
+    color: #8b0000;
+    transform: scale(1.05);
+}
+
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.6s;
+}
+
+.btn-gold:hover::after {
+  left: 100%;
+}
+
+
+/* ==========================================
+   6. المنتجات
+   ========================================== */
+.products { padding: 80px 60px; }
+.products h4 { text-align: center; margin-top: 40px; margin-bottom: 40px; display: block; font-size: 2rem; }
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.card { 
+    background: #111; 
+    border: 1px solid #222; 
+    border-radius: 15px; 
+    padding: 25px; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; 
+}
+
+.card:hover { 
+    border-color: #8b0000; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
+}
+
+.card-img-container img { 
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.card:hover .card-img-container img { 
+    transform: scale(1.15); 
+}
+
+.product-info-wrapper { text-align: center; margin: 15px 0; min-height: 70px; }
+.shop-title { font-size: 1.2rem; font-weight: 800; margin: 0; color: #fff; text-transform: uppercase; }
+.product-description { font-size: 0.9rem; color: #b0b0b0; margin: 5px 0 0 0; font-style: italic; }
+
+.color-selector { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.color-dot { 
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    border: 2px solid transparent; 
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; 
+}
+.color-dot.active { border-color: #fff; transform: scale(1.2); }
+.card .btn-gold { margin-top: auto; width: 100%; }
+
+/* ==========================================
+   7. الـ Footer & Banner
+   ========================================== */
+.fighter-banner-merged {
+   
+   
+   position: relative; /* أضف هذا السطر */
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:  url('../image/owner1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 40px 0;
+}
+
+.banner-content {
+    z-index: 2;
+    text-align: center;
+}
+
+.banner-content h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-learn-more:hover {
+    background: white;
+    color: black;
+}/* ==========================================
+   تنسيق الفوتر (Footer Styles)
+   ========================================== */
+.footer {
+    background: #0a0a0a;
+    padding: 60px 20px;
+    border-top: 1px solid #1a1a1a;
+    text-align: left;
+    color: #bdbdbd;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.footer-col h3, .footer-col h4 {
+
+  color: #8b0000; /* 🔴 اسم البراند أحمر */
+  font-size: 24px;
+  margin-bottom: 15px;
+ 
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #bdbdbd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #8b0000;
+}
+
+/* تنسيق أيقونات السوشيال ميديا */
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+.socials a {
+    font-size: 1.2rem;
+    color: #fff;
+    background: #1a1a1a;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: #8b0000;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* تعديل بسيط للتجاوب مع الموبايل */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+    .socials {
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   8. التجاوب (Mobile Responsive)
+   ========================================== */
+@media (max-width: 768px) {
+  .hero { flex-direction: column; text-align: center; }
+  .features { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .products { padding: 10px 4px !important; }
+  .product-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .card { padding: 12px 6px !important; border-radius: 12px !important; min-height: 280px !important; }
+  .card-img-container { height: 130px !important; margin-bottom: 12px !important; }
+  .card h3 { font-size: 13px !important; margin-bottom: 15px !important; }
+  .color-selector { display: flex !important; flex-wrap: wrap; justify-content: center !important; gap: 8px !important; margin-bottom: 15px !important; }
+  .color-dot { width: 22px !important; height: 22px !important; border: 2px solid #333; }
+  .card .btn-gold { width: 100% !important; padding: 10px 0 !important; font-size: 11px !important; }
+}
+
+@media (max-width: 600px) {
+    .hero-text h1 { font-size: 28px !important; line-height: 1.2 !important; }
+    .hero-text p { font-size: 14px !important; }
+}
+/* إزالة اللمعة البيضاء من الكروت */
+.card {
+    position: relative !important;
+    overflow: hidden !important;
+    z-index: 10 !important;
+}
+
+.products,
+.product-grid {
+    position: relative !important;
+    z-index: 1 !important;
+}

@@ -1,0 +1,63 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+     margin: 0;
+    padding: 25px 60px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f0f0f;
+    border-bottom: 1px solid #222;
+    width: 100%;
+}
+
+.navbar h2 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    white-space: nowrap; /* لمنع الكلمة من الانقسام */
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 40px !important; /* استخدام !important لضمان عدم تأثرها بأي كود آخر */
+    flex-shrink: 0;
+}
+
+.navbar li {
+    flex-shrink: 0; /* تمنع العناصر من الانكماش */
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    display: block;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    color: #8b0000;
+}
+/* تغيير الخط فقط لروابط الـ Navbar */
+.navbar ul li a {
+    /* استبدلي 'Roboto' باسم الخط الذي تريدينه */
+    font-family: 'Roboto', sans-serif !important; 
+    
+    /* يمكنك تعديل حجم الخط أو وزنه هنا إذا أردتِ */
+    font-weight: 600; 
+    font-size: 16px; 
+}

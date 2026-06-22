@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Premium Mouth Guards</title>
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">  
+    <link rel="icon" type="image/x-icon" href="image/logo1.png"> 
+
+ <style>
+    /* التأثير الأساسي: مخفي ومزاح للأسفل قليلاً */
+    .about-hero, .mission-card, .why-card, .about-cta {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+    }
+    
+    /* الكلاس الذي سيضيفه الجافا سكريبت عند التمرير */
+    .visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+</style>
+
+</head>
+
+<body>
+
+     <nav class="navbar">
+        <div class="logo-area">
+            <h2>JOPA</h2> 
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about-hero">
+        <div class="about-text">
+            <h1>ABOUT OUR BRAND</h1>
+            <p>JOPA Dental is an Egyptian brand founded by Dr. Ahmed Ehab, a professional MMA athlete and dentist, dedicated to revolutionizing athletic protection.</p>
+            <p>
+                At JOPA Dental, we believe that true protection empowers performance. We aren't just making products; we are crafting the confidence you need to excel in your arena. Every milestone we reach is a testament to the trust you place in us, and we are constantly evolving to ensure we deliver nothing less than excellence.
+            </p>
+        </div>
+        <img src="image/owner1.png" alt="Brand Owner">
+    </section>
+
+    <section class="mission">
+        <div class="mission-card">
+            <i class="fa-solid fa-bullseye"></i>
+            <h2>OUR IMPACT</h2>
+            <p>
+                In a short span of time, we have successfully provided high-quality custom mouthguards to over 500 athletes. Our gear has been field-tested and trusted by professionals and enthusiasts.
+            </p>
+        </div>
+
+        <div class="mission-card">
+            <i class="fa-solid fa-eye"></i>
+            <h2>OUR REACH</h2>
+            <p>
+                We have established strategic collaborations with over 30 premier sports facilities and specialized centers across Egypt, reaching athletes in Alexandria, Cairo, Sharqia, Port Said, and Mansoura.
+            </p>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <h2>TRUSTED ACROSS DISCIPLINES</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <i class="fa-solid fa-shield"></i>
+                <h3>Combat Sports</h3>
+                <p>MMA, Boxing, and Kickboxing</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fa-solid fa-medal"></i>
+                <h3>Team Sports</h3>
+                <p>Rugby and Wrestling</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fa-solid fa-face-smile"></i>
+                <h3>Performance</h3>
+                <p>Swimming, and many other demanding disciplines.</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Our Journey</h3>
+                <p>Thank you for being part of the JOPA journey. We are just getting started.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta">
+        <h2>READY TO PROTECT YOUR SMILE?</h2>
+        <a href="shop.html" class="btn-gold">SHOP COLLECTION</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>JOPA</h3>
+                <p>Premium mouth guards built for fighters and high-impact athletes.</p>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-col">
+                    <h4>FOLLOW US</h4>
+                    <div class="socials">
+                        <a href="https://www.instagram.com/jopa_dental?igsh=Z3pjcTZyNXBuOG14"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@jopa_dental?_r=1&_t=ZS-97NNFG3ZBVB"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Mouth Guard. All Rights Reserved.
+        </div>
+    </footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
