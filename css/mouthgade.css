@@ -15,7 +15,7 @@ html { scroll-behavior: smooth; }
    ========================================== */
 /* اجعلي الـ Navbar يطفو فوق الفيديو */
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -277,9 +277,11 @@ video {
 }
 
 .card-img-container img { 
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important; 
-    width: 100%; 
-    height: 100%; 
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.5, 5) !important; 
+    padding-right: 67px !important;
+    padding-bottom: 20px;
+    width: 135%; 
+    height: 135%; 
     object-fit: cover; 
 }
 
@@ -288,17 +290,35 @@ video {
 }
 
 .product-info-wrapper { text-align: center; margin: 15px 0; min-height: 70px; }
-.shop-title { font-size: 1.2rem; font-weight: 800; margin: 0; color: #fff; text-transform: uppercase; }
-.product-description { font-size: 0.9rem; color: #b0b0b0; margin: 5px 0 0 0; font-style: italic; }
+.shop-title { font-size: 100%; font-weight: 800; margin-top: 2; color: #fff; text-transform: uppercase; padding-top: 15px ; font-family:  'Montserrat', sans-serif; }
+.product-description { font-size: 0.9rem; color: #b0b0b0; margin: 5px 0 0 0; font-style: italic; font-family:  'Montserrat', sans-serif; }
 
-.color-selector { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-.color-dot { 
-    width: 20px; 
-    height: 20px; 
-    border-radius: 50%; 
-    cursor: pointer; 
-    border: 2px solid transparent; 
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; 
+.color-selector { display: flex; justify-content: center; align-items: center; gap: 2px; margin-bottom: 20px; flex-wrap: wrap; }
+.color-dot {
+    width: 20px !important;       /* عرض الدائرة */
+    height: 20px !important;      /* ارتفاع الدائرة (يجب أن يساوي العرض) */
+    display: inline-block !important;
+    border-radius: 50% !important; /* لجعلها دائرة */
+    cursor: pointer;
+    border: 2px solid #ccc;
+    flex-shrink: 0;               /* يمنعها من الانضغاط أو التمطط */
+    margin: 4px;                  /* مسافة بين الدوائر */
+}
+
+.color-selector {
+    display: flex !important;
+    flex-direction: row !important; /* تأكدي أنها Row وليست Column */
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;     /* للسماح للدوائر بالنزول لسطر جديد إذا لم تكفِ المساحة */
+}
+
+/* في الموبايل (أضفت هذا لضمان عدم كبر الحجم بشكل غير مرغوب) */
+@media (max-width: 480px) {
+    .color-dot {
+        width: 16px !important; 
+        height: 16px !important;
+    }
 }
 .color-dot.active { border-color: #fff; transform: scale(1.2); }
 .card .btn-gold { margin-top: auto; width: 100%; }
@@ -459,8 +479,8 @@ video {
   .card { padding: 12px 6px !important; border-radius: 12px !important; min-height: 280px !important; }
   .card-img-container { height: 130px !important; margin-bottom: 12px !important; }
   .card h3 { font-size: 13px !important; margin-bottom: 15px !important; }
-  .color-selector { display: flex !important; flex-wrap: wrap; justify-content: center !important; gap: 8px !important; margin-bottom: 15px !important; }
-  .color-dot { width: 22px !important; height: 22px !important; border: 2px solid #333; }
+  .color-selector { display: flex !important; flex-wrap: wrap; justify-content: center !important; gap: 0.4px !important; margin-bottom: 15px !important; }
+  .color-dot { width: 18px !important; height: 18px !important; border: 2px solid #333; }
   .card .btn-gold { width: 100% !important; padding: 10px 0 !important; font-size: 11px !important; }
 }
 
@@ -480,3 +500,26 @@ video {
     position: relative !important;
     z-index: 1 !important;
 }
+/* Night Guard */
+
+.night-selector .color-dot:first-child{
+    background:#fff;
+    border:2px solid #ccc;
+}
+
+
+
+#night-img{
+    transition:opacity .3s ease;
+}
+
+#night-type{
+    transition:all .3s ease;
+}
+.gold-number {
+    color: #D4AF37; /* لون ذهبي */
+    font-weight: 800; /* ليكون الرقم عريض وواضح */
+    font-size: 1.1em; /* تكبير الرقم قليلاً ليكون مميزاً */
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.5); /* إضافة توهج بسيط للرقم */
+}
+
