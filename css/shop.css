@@ -195,7 +195,7 @@ body {
 }
 
 .product-price {
-    color: #ca0000;
+    color: #8b0000;
     font-size: 1rem;
     padding-top: 10px;
     font-weight: bold;
@@ -461,4 +461,11 @@ body {
   .footer-col h3 {
     justify-content: center;
   }
+}
+
+.btn-add{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
 }

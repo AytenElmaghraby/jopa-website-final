@@ -29,7 +29,7 @@ body {
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 40px !important; /* استخدام !important لضمان عدم تأثرها بأي كود آخر */
+    gap: 30px !important; /* استخدام !important لضمان عدم تأثرها بأي كود آخر */
     flex-shrink: 0;
 }
 
@@ -66,4 +66,19 @@ body {
     font-weight: 800; /* ليكون الرقم عريض وواضح */
     font-size: 1.1em; /* تكبير الرقم قليلاً ليكون مميزاً */
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.5); /* إضافة توهج بسيط للرقم */
+}
+#logo {
+    display: inline-block !important; /* لضمان استجابته للمسافات */
+    color: white !important;          /* اللون الذي تريدينه */
+    text-decoration: none !important; /* إزالة أي خطوط تحت اللوجو */
+    font-weight: bold !important;     /* تأكيد سمك الخط */
+    font-family: 'Montserrat', sans-serif !important; /* تأكيد نوع الخط */
+    
+    /* إذا كنتِ تريدين التحكم في حجمه ليطابق الهوم تماماً */
+    font-size: 28px !important;       
+    letter-spacing: 3px !important;   
+    
+    /* إزالة أي إرث (Inheritance) من الـ ul أو الـ li */
+    /* margin: 0 !important;
+    padding: 0 !important; */
 }
