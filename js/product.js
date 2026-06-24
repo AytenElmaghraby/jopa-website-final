@@ -15,10 +15,10 @@ colors: [
 {color:"rgba(255,255,255,0.4)", image:"image/custom-clear.jpeg"}
 ],
 
-description:"Premium dual-layer 4mm mouthguard fully customized with your name. After placing your order, our team will contact you to discuss your preferred design and customization details.",
+description:"Premium dual-layer 4-5mm mouthguard fully customized with your name. After placing your order, our team will contact you to discuss your preferred design and customization details.",
 
 features:[
-"Dual-Layer 4mm Construction",
+"Dual-Layer 4-5mm Construction",
 "Premium EVA Material",
 "Custom Name Design",
 "Impact Absorption Protection",
@@ -43,10 +43,10 @@ colors: [
 {color:"rgba(255,255,255,0.4)", image:"image/clear.jpeg"}
 ],
 
-description:"Premium dual-layer 4mm mouthguard featuring the official JOPA logo. Built for athletes seeking performance, protection and comfort.",
+description:"Premium dual-layer 4-5mm mouthguard featuring the official JOPA logo. Built for athletes seeking performance, protection and comfort.",
 
 features:[
-"Dual-Layer 4mm Construction",
+"Dual-Layer 4-5mm Construction",
 "Premium EVA Material",
 "Official JOPA Logo",
 "Shock Absorption",
@@ -59,7 +59,7 @@ features:[
 "jp-tre-name": {
 
 title: "JP-TRE Name",
-price: "1700 EGP",
+price: "1900 EGP",
 image: "image/custom-black.jpeg",
 
 colors: [
@@ -87,7 +87,7 @@ features:[
 "jp-tre-logo": {
 
 title: "JP-TRE Logo",
-price: "1500 EGP",
+price: "1600 EGP",
 image: "image/black-guard.jpeg",
 
 colors: [
@@ -118,20 +118,11 @@ title: "JP-DUE Full Design",
 price: "1800 EGP",
 image: "image/design2.jpeg",
 
-colors: [
-{color:"#111", image:"image/design2.jpeg"},
-{color:"#fff", image:"image/design2-white.jpeg"},
-{color:"#0138a7", image:"image/design2-blue.jpeg"},
-{color:"#008000", image:"image/design2-green.jpeg"},
-{color:"#c30061", image:"image/design2-pink.jpeg"},
-{color:"rgba(255,255,255,0.4)", image:"image/design2-clear.jpeg"}
-],
-
 description:"Our team will contact you after purchase to create your fully customized design exactly as you want.",
 
 features:[
+"Premium dual-layer 4-5mm mouthguard ",
 "Full Custom Design",
-"Dual Layer Construction",
 "Premium EVA",
 "Unlimited Design Options",
 "Impact Protection",
@@ -143,22 +134,13 @@ features:[
 "jp-tre-teeth": {
 
 title: "JP-TRE Full Design",
-price: "2000 EGP",
+price: "2200 EGP",
 image: "image/design0.jpeg",
-
-colors: [
-{color:"#111", image:"image/design0.jpeg"},
-{color:"#fff", image:"image/design0-white.jpeg"},
-{color:"#0138a7", image:"image/design0-blue.jpeg"},
-{color:"#008000", image:"image/design0-green.jpeg"},
-{color:"#c30061", image:"image/design0-pink.jpeg"},
-{color:"rgba(255,255,255,0.4)", image:"image/design0-clear.jpeg"}
-],
 
 description:"Our team will contact you after purchase to discuss your complete custom design requirements and artwork.",
 
 features:[
-"Triple Layer Protection",
+"Premium Triple-layer 5-6mm mouthguard",
 "Complete Custom Design",
 "Premium EVA Material",
 "Maximum Impact Resistance",
@@ -171,14 +153,49 @@ features:[
 "night-soft": {
 
 title: "Night Guard Soft",
-price: "Price Coming Soon",
+price: "1500",
 image: "image/night.jpeg",
 
-colors: [
-{color:"#ffffff", image:"image/night.jpeg"}
+types: [
+
+{
+name: "Soft",
+image: "image/night.jpeg",
+
+description:
+"Soft version of the JOPA Night Guard designed for comfort and protection against grinding during sleep.",
+
+features:[
+"Soft Material",
+"Comfort Fit",
+"Bruxism Protection",
+"Jaw Relief",
+"BPA Free",
+"Custom Fit"
+]
+},
+
+{
+name: "Hard",
+image: "image/night.jpeg",
+
+description:
+"Hard version of the JOPA Night Guard offering enhanced durability and protection during sleep.",
+
+features:[
+"Hard Material",
+"Enhanced Durability",
+"Bruxism Protection",
+"Jaw Support",
+"BPA Free",
+"Custom Fit"
+]
+}
+
 ],
 
-description:"Soft version of the JOPA Night Guard designed for comfort and protection against grinding during sleep.",
+description:
+"Soft version of the JOPA Night Guard designed for comfort and protection against grinding during sleep.",
 
 features:[
 "Soft Material",
@@ -190,34 +207,10 @@ features:[
 ]
 
 },
-
-"night-hard": {
-
-title: "Night Guard Hard",
-price: "Price Coming Soon",
-image: "image/night.jpeg",
-
-colors: [
-{color:"#8b0000", image:"image/night.jpeg"}
-],
-
-description:"Hard version of the JOPA Night Guard offering enhanced durability and protection during sleep.",
-
-features:[
-"Hard Material",
-"Enhanced Durability",
-"Bruxism Protection",
-"Jaw Support",
-"BPA Free",
-"Custom Fit"
-]
-
-},
-
 "swim-guard": {
 
 title: "Swim Guard",
-price: "Price Coming Soon",
+price: "1500",
 image: "image/swim.jpeg",
 
 colors: [
@@ -276,7 +269,7 @@ featureList.appendChild(li);
 const colorsContainer =
 document.getElementById("product-colors");
 
-if(product.colors){
+if(product.colors && !product.types){
 
 product.colors.forEach((color,index)=>{
 
@@ -320,7 +313,74 @@ colorsContainer.appendChild(span);
 });
 
 }
+if(product.types){
 
+const optionsContainer =
+document.getElementById("night-options");
+
+optionsContainer.innerHTML = "";
+
+product.types.forEach((type,index)=>{
+
+const btn =
+document.createElement("button");
+
+btn.classList.add("night-btn");
+
+if(index===0){
+btn.classList.add("active");
+}
+
+btn.textContent = type.name;
+
+btn.addEventListener("click",()=>{
+
+document
+.querySelectorAll(".night-btn")
+.forEach(b=>b.classList.remove("active"));
+
+btn.classList.add("active");
+
+const img =
+document.getElementById("product-img");
+
+img.style.opacity = "0";
+
+setTimeout(()=>{
+
+img.src = type.image;
+
+img.style.opacity = "1";
+
+},200);
+
+document.getElementById(
+"product-description"
+).textContent = type.description;
+
+const featureList =
+document.getElementById("product-features");
+
+featureList.innerHTML = "";
+
+type.features.forEach(feature=>{
+
+const li =
+document.createElement("li");
+
+li.textContent = feature;
+
+featureList.appendChild(li);
+
+});
+
+});
+
+optionsContainer.appendChild(btn);
+
+});
+
+}
 }
 const reveals = document.querySelectorAll('.reveal');
 
@@ -348,3 +408,41 @@ function revealElements(){
 window.addEventListener('scroll', revealElements);
 
 revealElements();
+
+const optionsContainer =
+document.getElementById("night-options");
+
+if(productId === "night-soft" || productId === "night-hard"){
+
+colorsContainer.style.display = "none";
+
+const optionsContainer =
+document.getElementById("night-options");
+
+optionsContainer.innerHTML = `
+
+<button class="night-btn ${productId==="night-soft"?"active":""}"
+data-id="night-soft">
+Soft
+</button>
+
+<button class="night-btn ${productId==="night-hard"?"active":""}"
+data-id="night-hard">
+Hard
+</button>
+
+`;
+
+document.querySelectorAll(".night-btn")
+.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+window.location.href =
+`product.html?id=${btn.dataset.id}`;
+
+});
+
+});
+
+}

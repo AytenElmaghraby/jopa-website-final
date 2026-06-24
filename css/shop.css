@@ -164,13 +164,16 @@ body {
 
 /* التنسيق للخطوط */
 .shop-title {
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: white;
+     font-size: 70px !important; 
+    font-weight: 800;
+    padding-top: 4px ;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .price {
-  font-size: 16px;
+  font-: 16px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -196,11 +199,20 @@ body {
 
 .product-price {
     color: #8b0000;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding-top: 10px;
     font-weight: bold;
     text-align: center;
     margin: 10px 0;
+}
+.gold-number {
+    display: inline-block; /* ضروري جداً ليقبل الـ margin */
+    margin-top: 15px;      /* زودي القيمة حسب المسافة المطلوبة */
+    font-family: 'Montserrat', sans-serif;
+    color: #8b0000; 
+    font-weight: 750;
+    font-size: 1.2em;
+    text-shadow: 0 0 1px #f3ba006a;
 }
 /* تعديل الـ Responsive للموبايل */
 /* إجبار الشبكة على عرض عمودين دائماً في كل الشاشات */
@@ -217,12 +229,18 @@ body {
 
   .prod-img-container {
     height: 120px !important; /* تصغير ارتفاع الصورة قليلاً لتناسب العمودين */
+    zoom: 120%;
   }
 
-  .product-card h3 {
-    font-size: 11px !important; /* تصغير حجم الخط قليلاً ليناسب العرض */
+   .product-card h3 {
+    font-size: 15px !important;
+    font-weight: 800;
+    padding-top: 4px ;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif; /* تصغير حجم الخط قليلاً ليناسب العرض */
   }
-
+ 
   .product-card .price {
     font-size: 13px !important;
   }

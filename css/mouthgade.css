@@ -333,49 +333,62 @@ video {
 /* ==========================================
    7. الـ Footer & Banner
    ========================================== */
-.fighter-banner-merged {
-   
-   
-   position: relative; /* أضف هذا السطر */
-    width: 100%;
-    min-height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image:  url('../image/owner1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 40px 0;
+.fighter-banner-merged{
+    width:100%;
+    background:#000;
+    text-align:center;
+    padding:0 0 20px;
+    padding-bottom: 0px;
+     margin-top:40px;
 }
 
-.banner-content {
-    z-index: 2;
-    text-align: center;
+.banner-image{
+    width:100%;
 }
 
-.banner-content h2 {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 800;
+.banner-image img{
+    width:100%;
+    height:auto;
+    display:block;
 }
 
-.btn-learn-more {
-    display: inline-block;
-    padding: 12px 30px;
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
+.banner-content{
+    margin-top:10px;
 }
 
-.btn-learn-more:hover {
-    background: white;
-    color: black;
+.btn-learn-more{
+    display:inline-block;
+    padding:12px 30px;
+    background:transparent;
+    color:#fff;
+    border:2px solid #fff;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-learn-more:hover{
+    background:#fff;
+    color:#000;
+}
+
+@media(max-width:768px){
+
+.banner-image img{
+    width:100%;
+    height:auto;
+}
+
+.banner-content{
+    margin-top:8px;
+}
+
+.btn-learn-more{
+    padding:10px 24px;
+    font-size:14px;
+}
+
 }/* ==========================================
    تنسيق الفوتر (Footer Styles)
    ========================================== */
@@ -527,7 +540,7 @@ video {
     display: inline-block; /* ضروري جداً ليقبل الـ margin */
     margin-top: 15px;      /* زودي القيمة حسب المسافة المطلوبة */
     font-family: 'Montserrat', sans-serif;
-    color: #7f0000; 
+    color: #8b0000; 
     font-weight: 750;
     font-size: 1.2em;
     text-shadow: 0 0 1px #f3ba006a;

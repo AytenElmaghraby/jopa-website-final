@@ -113,19 +113,59 @@ font-size:42px;
 margin-bottom:15px;
 }
 
-.product-price{
-font-size:32px;
-font-weight:700;
-color:#8b0000;
-margin-bottom:25px;
+.product-price {
+    color: #8b0000;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+.gold-number {
+    display: inline-block; /* ضروري جداً ليقبل الـ margin */
+    padding-bottom: 15px ;      /* زودي القيمة حسب المسافة المطلوبة */
+    padding-left: 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: #8b0000; 
+    font-weight: 750;
+    font-size: 1.2em;
+    text-shadow: 0 0 1px #f3ba006a;
+}
+.product-short ul {
+    list-style-type: none; /* إزالة النقط لأنها لن تبدو جيدة في الترتيب من اليمين */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* لمحاذاة كل النص لليمين */
 }
 
-.product-short{
-color:#cfcfcf;
-line-height:1.7;
-margin-bottom:30px;
+.product-short li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    direction: rtl; /* لفرض الترتيب من اليمين لليسار على كل النص */
+}
+.product-short strong {
+    font-weight: bolder;
+}
+.product-short {
+    line-height: 1.6;
+    margin: 15px 0;
+    text-align: right;
 }
 
+
+.note-text {
+    display: block; /* لجعل كل جملة في سطر مستقل */
+    text-align: right; /* لمحاذاة النص لليمين */
+}
+
+.whatsapp-alert {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #000000;
+}
 /* =========================
    FEATURES
 ========================= */
@@ -542,4 +582,30 @@ justify-content:center;
 .reveal.active{
     opacity:1;
     transform:translateY(0);
+}
+#night-options{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:15px;
+}
+
+.night-btn{
+padding:12px 25px;
+background:#111;
+border:1px solid #333;
+color:#fff;
+cursor:pointer;
+border-radius:8px;
+transition:.3s;
+font-weight:600;
+}
+
+.night-btn:hover{
+border-color:#8b0000;
+}
+
+.night-btn.active{
+background:#8b0000;
+border-color:#8b0000;
 }
