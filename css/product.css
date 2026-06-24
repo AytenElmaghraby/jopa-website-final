@@ -592,3 +592,44 @@ justify-content:center;
     transform:translateY(0);
 }
 
+#product-price{
+    font-size: 30px;
+}
+#night-options{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+    justify-content:center;
+}
+
+.night-btn{
+    padding:12px 24px;
+    border:1px solid #8b0000;
+    border-radius:30px;
+    background:#111;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.night-btn:hover{
+    background:#8b0000;
+}
+
+.night-btn.active{
+    background:#8b0000;
+    color:#fff;
+}
+@media(max-width:768px){
+
+    #night-options{
+        justify-content:flex-start;
+        flex-wrap:wrap;
+    }
+
+    .night-btn{
+        min-width:90px;
+    }
+
+}
