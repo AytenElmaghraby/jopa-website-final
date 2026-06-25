@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOPA - Home</title>
+    <link rel="icon" type="image/x-icon" href="image/logo1.png"> 
+    <link rel="stylesheet" href="css/mouthgade.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+ <style>
+    .card, .hero-text, .fighter-banner-merged {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out !important;
+    }
+
+    .card.visible, .hero-text.visible, .fighter-banner-merged.visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .features .feature {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    .features.visible .feature {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+
+    .features.visible .feature:nth-child(1) { transition-delay: 0.1s; }
+    .features.visible .feature:nth-child(2) { transition-delay: 0.3s; }
+    .features.visible .feature:nth-child(3) { transition-delay: 0.5s; }
+    .features.visible .feature:nth-child(4) { transition-delay: 0.7s; }
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo-area"><h2>JOPA</h2></div>
+</header>
+
+<section class="hero">
+    <video autoplay muted loop playsinline class="hero-bg-video">
+        <source src="videos/your-video.mp4" type="video/mp4">
+    </video>
+    
+    <div class="hero-text fade-in-element">
+        <h1>WELCOME TO CHAMP HOME<br> THE <span class="highlight-gold">1st</span> CHOICE FOR CHAMPS</h1>
+    </div>
+
+    <a href="shop.html" class="btn-gold-floating">SHOP NOW</a>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <i class="fas fa-shield-alt"></i> <h3>MAX PROTECTION</h3>
+    </div>
+    <div class="feature">
+        <i class="fas fa-teeth"></i>
+        <h3>CUSTOM FIT</h3>
+    </div>
+    <div class="feature">
+        <i class="fas fa-wind"></i>
+        <h3>EASY BREATHING</h3>
+    </div>
+    <div class="feature">
+        <i class="fas fa-trophy"></i>
+       <h3>We did <span class="highlight-gold">+500</span> mouthguards</h3>
+    </div>
+</section>
+
+<section class="products">
+    <h4>OUR PRODUCTS</h4>
+    <div class="product-grid">
+        <div class="card fade-in-element" id="custom-card-2">
+            <div class="card-img-container"><img src="image/black-guard.jpeg" alt="Logo Guard" id="custom-img-2"></div>
+            <div class="product-info-wrapper">
+                <h3 class="shop-title" id="custom-title-2">JP-DUE</h3>
+                <p class="product-description">(<span class="product-price">2</span>-Layer with JOPA logo)</p>
+                        <p class="gold-number">1300 EGP</p>
+
+            </div>
+            <div class="color-selector">
+                <span class="color-dot active" style="background-color: #111;" data-title="JP-DUE" data-img="image/black-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: #fff; border: 1px solid #ccc;" data-title="JP-DUE" data-img="image/white-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: #0138a7;" data-title="JP-DUE" data-img="image/blue-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: #008000;" data-title="JP-DUE" data-img="image/green-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: #c30061;" data-title="JP-DUE" data-img="image/pink-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: rgba(255,255,255,0.4);" data-title="JP-DUE" data-img="image/clear.jpeg"></span>
+            </div>
+<a href="product.html?id=jp-due-logo" class="btn-gold">CUSTOMIZE NOW</a>
+        </div>
+
+        <div class="card fade-in-element" id="color-card-1">
+            <div class="card-img-container"><img src="image/black-guard.jpeg" alt="TRE Logo" id="color-img-1"></div>
+            <div class="product-info-wrapper">
+                <h3 class="shop-title" id="color-title-1">JP-TRE</h3>
+                <p class="product-description">(  <span class="product-price">3</span>-Layer with JOPA logo  )</p>
+                        <p class="gold-number">1600 EGP</p>
+
+            </div>
+            <div class="color-selector">
+                <span class="color-dot active" style="background-color: #111;" data-title="JP-TRE" data-img="image/black-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: #fff; border: 1px solid #ccc;" data-title="JP-TRE" data-img="image/white-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: #0138a7;" data-title="JP-TRE" data-img="image/blue-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: #008000;" data-title="JP-TRE" data-img="image/green-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: #c30061;" data-title="JP-TRE" data-img="image/pink-guard.jpeg"></span>
+                <span class="color-dot" style="background-color: rgba(255,255,255,0.4);" data-title="JP-TRE" data-img="image/clear.jpeg"></span>
+            </div>
+<a href="product.html?id=jp-tre-logo" class="btn-gold">CUSTOMIZE NOW</a>
+        </div>
+
+        <div class="card fade-in-element" id="custom-card-1">
+            <div class="card-img-container"><img src="image/custom-black.jpeg" alt="Name Guard" id="custom-img-1"></div>
+            <div class="product-info-wrapper">
+                <h3 class="shop-title" id="custom-title-1">JP-DUE</h3>
+                <p class="product-description">(  <span class="product-price">2</span>-Layer with your name  )</p>
+                        <p class="gold-number">1500 EGP</p>
+
+            </div>
+            <div class="color-selector">
+                <span class="color-dot active" style="background-color: #111;" data-title="JP-DUE" data-img="image/custom-black.jpeg"></span>
+                <span class="color-dot" style="background-color: #fff; border: 1px solid #ccc;" data-title="JP-DUE" data-img="image/custom-white.jpeg"></span>
+                <span class="color-dot" style="background-color: #0138a7;" data-title="JP-DUE" data-img="image/custom-blue.jpeg"></span>
+                <span class="color-dot" style="background-color: #008000;" data-title="JP-DUE" data-img="image/custom-green.jpeg"></span>
+                <span class="color-dot" style="background-color: #c30061;" data-title="JP-DUE" data-img="image/custom-pink.jpeg"></span>
+                <span class="color-dot" style="background-color: rgba(255,255,255,0.4);" data-title="JP-DUE" data-img="image/custom-clear.jpeg"></span>
+            </div>
+<a href="product.html?id=jp-due-name" class="btn-gold">CUSTOMIZE NOW</a>
+        </div>
+
+        <div class="card fade-in-element" id="color-card-2">
+            <div class="card-img-container"><img src="image/custom-black.jpeg" alt="TRE Name" id="color-img-2"></div>
+            <div class="product-info-wrapper">
+                <h3 class="shop-title" id="color-title-2">JP-TRE</h3>
+                <p class="product-description">(  <span class="product-price">3</span>-Layer with your name  )</p>
+                        <p class="gold-number">1900 EGP</p>
+
+            </div>
+            <div class="color-selector">
+                <span class="color-dot active" style="background-color: #111;" data-title="JP-TRE" data-img="image/custom-black.jpeg"></span>
+                <span class="color-dot" style="background-color: #fff; border: 1px solid #ccc;" data-title="JP-TRE" data-img="image/custom-white.jpeg"></span>
+                <span class="color-dot" style="background-color: #0138a7;" data-title="JP-TRE" data-img="image/custom-blue.jpeg"></span>
+                <span class="color-dot" style="background-color: #008000;" data-title="JP-TRE" data-img="image/custom-green.jpeg"></span>
+                <span class="color-dot" style="background-color: #c30061;" data-title="JP-TRE" data-img="image/custom-pink.jpeg"></span>
+                <span class="color-dot" style="background-color: rgba(255,255,255,0.4);" data-title="JP-TRE" data-img="image/custom-clear.jpeg"></span>
+            </div>
+<a href="product.html?id=jp-tre-name" class="btn-gold">CUSTOMIZE NOW</a>
+        </div>
+
+        <div class="card fade-in-element" id="design-card-2">
+            <div class="card-img-container"><img src="image/design2.jpeg" alt="Full Design" id="design-img-2"></div>
+            <div class="product-info-wrapper">
+                <h3 class="shop-title" id="design-title-2">JP-DUE</h3>
+                <p class="product-description"> (  <span class="product-price">2</span>-Layer Full Design  )</p>
+                        <p class="gold-number">1800 EGP</p>
+
+            </div>
+            <div class="color-selector">
+                <span class="color-dot " style="background-color: #111;" data-title="JP-DUE" data-img="image/design2.jpeg"></span>
+                <span class="color-dot" style="background-color: #fff; " data-title="JP-DUE" data-img="image/design2-white.jpeg"></span>
+                <span class="color-dot" style="background-color: #0138a7;" data-title="JP-DUE" data-img="image/design2-blue.jpeg"></span>
+                <span class="color-dot" style="background-color: #008000;" data-title="JP-DUE" data-img="image/design2-green.jpeg"></span>
+                <span class="color-dot" style="background-color: #c30061;" data-title="JP-DUE" data-img="image/design2-pink.jpeg"></span>
+                <span class="color-dot" style="background-color: rgba(255,255,255,0.4);" data-title="JP-DUE" data-img="image/design2-clear.jpeg"></span>
+            </div>
+<a href="product.html?id=jp-due-camo" class="btn-gold">CUSTOMIZE NOW</a>
+        </div>
+
+        <div class="card fade-in-element" id="design-card-1">
+            <div class="card-img-container"><img src="image/design0.jpeg" alt="Full Design" id="design-img-1"></div>
+            <div class="product-info-wrapper">
+                <h3 class="shop-title" id="design-title-1">JP-TRE</h3>
+                <p class="product-description">(  <span class="product-price">3</span>-Layer Full Design  )</p>
+                        <p class="gold-number">2200 EGP</p>
+
+            </div>
+            <div class="color-selector">
+                <span class="color-dot " style="background-color: #8a8a8a;" data-title="JP-TRE" data-img="image/design0.jpeg"></span>
+                <span class="color-dot" style="background-color: #fff;" data-title="JP-TRE" data-img="image/design0-white.jpeg"></span>
+                <span class="color-dot" style="background-color: #0138a7;" data-title="JP-TRE" data-img="image/design0-blue.jpeg"></span>
+                <span class="color-dot" style="background-color: #008000;" data-title="JP-TRE" data-img="image/design0-green.jpeg"></span>
+                <span class="color-dot" style="background-color: #c30061;" data-title="JP-TRE" data-img="image/design0-pink.jpeg"></span>
+                <span class="color-dot" style="background-color: rgba(255,255,255,0.4);" data-title="JP-TRE" data-img="image/design0-clear.jpeg"></span>
+            </div>
+<a href="product.html?id=jp-tre-teeth" class="btn-gold">CUSTOMIZE NOW</a>
+        </div>
+
+        <div class="card fade-in-element" id="night-guard">
+            <div class="card-img-container"><img src="image/night.jpeg" alt="Night Guard" id="night-img"></div>
+            <div class="product-info-wrapper">
+                <h3 class="shop-title">JOPA Night Guard</h3>
+                <p class="product-description">( <span id="night-type">Soft</span> Type )</p>
+                        <p class="gold-number">1500 EGP</p>
+
+            </div>
+            <div class="color-selector night-selector">
+                <span class="color-dot " style="background-color: rgba(255,255,255,0.4);" data-img="image/night.jpeg" data-type="Soft" title="Soft Type"></span>
+                <span class="color-dot" style="background-color: rgba(255,255,255,0.4);" data-img="image/night.jpeg" data-type="Hard" title="Hard Type"></span>
+            </div>
+<a href="product.html?id=night-soft" class="btn-gold">
+CUSTOMIZE NOW
+</a>        </div>
+
+        <div class="card fade-in-element" id="swim-guard">
+            <div class="card-img-container"><img src="image/swim.jpeg" alt="Swimming Guard"></div>
+            <div class="product-info-wrapper">
+                <h3 class="shop-title">JP-SWIM</h3>
+                <p class="product-description">(Professional Swim Guard)</p>
+                        <p class="gold-number">1500 EGP</p>
+
+            </div>
+            <div class="color-selector">
+                <span class="color-dot" style="background-color: rgba(255,255,255,0.4);" data-title="JP-SWIMMING" data-img="image/swim.jpeg"></span>
+            </div>
+<a href="product.html?id=swim-guard" class="btn-gold">CUSTOMIZE NOW</a>
+        </div>
+    </div>
+</section>
+
+<section class="fighter-banner-merged visible">
+
+    <div class="banner-image">
+        <img src="image/owner1.jpeg" alt="JOPA Fighters">
+    </div>
+
+    <div class="banner-content">
+        <a href="about.html" class="btn-learn-more">
+            LEARN MORE
+        </a>
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3><span>JOPA</span></h3>
+            <p>Premium mouth guards built for fighters and high-impact athletes.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>SHOP</h4>
+            <ul><li><a href="shop.html">All Products</a></li></ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <ul><li><a href="about.html">About Us</a></li></ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>FOLLOW US</h4>
+            <div class="socials">
+                <a href="https://www.instagram.com/jopa_dental?igsh=Z3pjcTZyNXBuOG14"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@jopa_dental?_r=1&_t=ZS-97NNFG3ZBVB"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">© 2025 JOPA. All Rights Reserved.</div>
+
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
