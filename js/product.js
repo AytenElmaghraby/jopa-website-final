@@ -500,7 +500,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const orderDescription = product ? product.title : "Unknown product";
 
     try {
-        const response = await fetch('http://localhost:3000/api/order', {
+      const response = await fetch('https://jopa-website-final-production.up.railway.app/api/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
