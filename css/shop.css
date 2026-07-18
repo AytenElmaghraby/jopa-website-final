@@ -1,0 +1,489 @@
+/* ==========================================
+   1. إعدادات عامة وتنسيقات الأساسية
+   ========================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background-color: #050505 !important; 
+    color: white; 
+    margin: 0; 
+    padding: 0; 
+}
+/* توحيد الأزرار */
+.btn-gold {
+    display: inline-block;
+    padding: 12px 40px; /* زيادة العرض ليكون الزر مريحاً للعين */
+    background-color: #8b0000 !important; /* اللون الأحمر المميز */
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 50px; /* حواف دائرية ليعطي شكلاً عصرياً */
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+
+/* تأثير التفاعل عند الضغط أو المرور بالماوس */
+.btn-gold:hover {
+    background-color: transparent !important;
+    border: 2px solid #8b0000;
+    color: #8b0000;
+    transform: scale(1.05);
+}
+
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.6s;
+}
+
+.btn-gold:hover::after {
+  left: 100%;
+}
+/* توحيد أيقونات المميزات */
+.feature i { color: var(--primary-red) !important; }
+
+
+/* ==========================================
+   3. هيكل صفحة الـ Shop (Sidebar + Products)
+   ========================================== */
+.shop-page {
+  display: flex;
+  padding: 60px;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 800px;
+}
+
+/* --- القائمة الجانبية (Sidebar) --- */
+.sidebar {
+  width: 260px;
+  background: #0b0b0b;
+  border: 1px solid #1c1c1c;
+  padding: 30px;
+  border-radius: 12px;
+  height: fit-content;
+  position: sticky;
+  top: 100px; /* لتبقى القائمة ظاهرة عند النزول بالصفحة */
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 15px;
+}
+
+.sidebar h4 {
+  font-size: 14px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  color: #bdbdbd;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li:hover, 
+.sidebar ul li.active {
+  color: #fff;
+  background-color: #8b0000; /* تحديد القسم النشط باللون الأحمر */
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+/* --- منطقة الكروت (Products Grid) --- */
+/* تنسيق الحاوية الرئيسية لصفحة الشوب */
+.shop-page {
+  display: flex;
+  padding: 40px 20px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* الشبكة (المنتجات) */
+.products-area {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* إجبار المتصفح على عمودين فقط */
+  gap: 15px; /* مسافة بسيطة بين الكروت لتناسب حجم الموبايل */
+}
+
+/* تنسيق الكرت ليشبه تصميم الـ Home في الصورة */
+.product-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* الصورة داخل الكرت */
+.prod-img-container {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* لجعل الصورة مربعة دائماً */
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* التنسيق للخطوط */
+.shop-title {
+     font-size: 70px !important; 
+    font-weight: 800;
+    padding-top: 4px ;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.price {
+  font-: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* Night Guard Shop */
+
+#night-guard .color-ball:first-child{
+    background:#fff;
+    border:2px solid #ccc;
+}
+
+
+
+#shop-night-img{
+    transition:opacity .3s ease;
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* هذا يضمن أن الزر دائماً في الأسفل */
+    height: 100%;
+    min-height: 100px; /* اضبطي القيمة إذا أردتِ تطويلاً أو تقصيراً */
+}
+
+.product-price {
+    color: #8b0000;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+.gold-number {
+    display: inline-block; /* ضروري جداً ليقبل الـ margin */
+    margin-top: 15px;      /* زودي القيمة حسب المسافة المطلوبة */
+    font-family: 'Montserrat', sans-serif;
+    color: #8b0000; 
+    font-weight: 750;
+    font-size: 1.2em;
+    text-shadow: 0 0 1px #f3ba006a;
+}
+/* تعديل الـ Responsive للموبايل */
+/* إجبار الشبكة على عرض عمودين دائماً في كل الشاشات */
+@media (max-width: 600px) {
+  .products-area {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* عمودين بالتساوي */
+    gap: 10px !important; /* مسافة صغيرة لتناسب شاشة الموبايل */
+  }
+
+  .product-card {
+    padding: 10px !important; /* تقليل المساحات داخل الكرت عشان يكفي */
+  }
+
+  .prod-img-container {
+    height: 120px !important; /* تصغير ارتفاع الصورة قليلاً لتناسب العمودين */
+    zoom: 120%;
+  }
+
+   .product-card h3 {
+    font-size: 15px !important;
+    font-weight: 800;
+    padding-top: 4px ;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif; /* تصغير حجم الخط قليلاً ليناسب العرض */
+  }
+ 
+  .product-card .price {
+    font-size: 13px !important;
+  }
+
+  .colors {
+    gap: 5px !important; /* تقريب الألوان من بعضها */
+    margin: 10px 0 !important;
+  }
+/* تحسين الترانزيشن للصور */
+.main-prod-img {
+    transition: opacity 0.4s ease-in-out !important;
+}
+
+/* تحسين دخول الكروت */
+.product-card {
+    transition: transform 0.5s ease, opacity 0.5s ease !important;
+}
+  .color-ball {
+    width: 16px !important; /* تصغير دوائر الألوان */
+    height: 16px !important;
+  }
+
+  .btn-add {
+    padding: 8px 5px !important;
+    font-size: 10px !important;
+  }
+}
+
+/* فلاتر الألوان الدائرية داخل الكارت */
+.colors {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0 25px;
+}
+
+.color-ball {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #333;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.color-ball:hover {
+  transform: scale(1.15);
+}
+
+.color-ball.active {
+  transform: scale(1.2);
+  border-color: #8b0000;
+  box-shadow: 0 0 8px rgba(139, 0, 0, 0.8); /* توهج أحمر حول اللون المختار */
+}
+
+/* 🔴 زر الشراء بالأحمر الدموي */
+.btn-add {
+  background: #8b0000;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s, transform 0.2s;
+  letter-spacing: 1px;
+}
+
+.btn-add:hover {
+  background: #550000;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   4. الفوتر المطور (Mega Footer)
+   ========================================== */
+.footer {
+  background: #0a0a0a;
+  padding: 80px 60px 30px 60px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr) 1.2fr;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto 60px auto;
+}
+
+.footer-col h3 {
+  color: #8b0000;
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-col h4 {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.footer-col p {
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #8b0000;
+  padding-left: 8px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 50%;
+  color: #bdbdbd;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  background: #8b0000;
+  color: white;
+  border-color: #8b0000;
+  transform: translateY(-5px);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #1a1a1a;
+  color: #555;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   5. شاشات التجاوب (Responsive)
+   ========================================== */
+@media (max-width: 1024px) {
+  .products-area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .brand-col {
+    grid-column: span 3;
+  }
+  .navbar {
+    padding: 20px 40px;
+  }
+  .shop-page {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-page {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+  .sidebar {
+    width: 100%;
+    position: static; /* إلغاء التثبيت في الموبايل */
+    margin-bottom: 20px;
+  }
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .sidebar ul li {
+    flex: 1 1 45%;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+  .navbar ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+ 
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .brand-col {
+    grid-column: span 1;
+  }
+  .socials {
+    justify-content: center;
+  }
+  .footer-col h3 {
+    justify-content: center;
+  }
+}
+
+.btn-add{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+}

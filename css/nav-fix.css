@@ -1,0 +1,33 @@
+/* ==========================================
+   إلغاء ثبات الـ Navbar (Sticky/Fixed)
+   الـ Nav يبقى في وضعه الطبيعي بأول الصفحة فقط
+   ويتحرك مع الصفحة عند السكرول (لا يفضل ظاهر طول الوقت)
+   ========================================== */
+.navbar {
+    position: static !important;
+    top: auto !important;
+}
+
+/* ==========================================
+   اللوجو الثابت في صفحة الهوم فقط
+   يظهر دايماً فوق الشاشة وانتِ بتسكرولي
+   ========================================== */
+.home-logo-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 18px 30px;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(6px);
+}
+
+.home-logo-bar a {
+    color: #fff;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
